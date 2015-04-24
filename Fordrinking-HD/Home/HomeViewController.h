@@ -10,7 +10,7 @@
 
 @interface HomeViewController : UIViewController
 
-@property UIView* rootView;
+//@property UIView* rootView;
 @property UIButton* button;
 @property UILabel* label;
 

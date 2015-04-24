@@ -17,23 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _rootView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    _view = _rootView;
-    
-    _button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    _button.frame = CGRectMake(620, 100, 80, 40);
-    [_button setTitle:@"Confirm" forState:UIControlStateNormal];
-    [_rootView addSubview:_button];
+    self.button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.button.frame = CGRectMake(620, 100, 80, 40);
+    [self.button setTitle:@"Confirm" forState:UIControlStateNormal];
+    [self.button addTarget:self action:@selector(clickHandler:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_button];
     
     
-    _label = [[UILabel alloc] initWithFrame:CGRectMake(60, 40, 180, 30)];
-    _label.text = @"init text";
-    _label.backgroundColor = [UIColor grayColor];
-    [_rootView addSubview:_label];
-    
-    [_button addTarget:self action:@selector(clickHandler:) forControlEvents:UIControlEventTouchUpInside];
-    
-    // Do any additional setup after loading the view.
+    self.label = [[UILabel alloc] initWithFrame:CGRectMake(60, 40, 180, 30)];
+    self.label.text = @"init text";
+    self.label.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:_label];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,7 +38,7 @@
 - (void)clickHandler: (id)sender
 {
     //_label.text = @"Start to learn ios";
-    _label.text = @"Start to learn ios";
+    self.label.text = @"Start to learn ios";
 }
 
 /*
